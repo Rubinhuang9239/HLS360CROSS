@@ -9,3 +9,15 @@ To get a playable HLS URL(m3u8 format), you need this plugin to retrive the url 
 To ignore the cross-origin-issue, you need this on your chrome to ignore the CROS issue. 
 
 <h2>Run this code with node.js</h2>
+
+Install packages that required in the Node application:
+
+`npm install`
+
+Then run the server with
+
+`node rubinhls.js`
+
+The app will run on your `localhost` at port `3000`
+
+Go to Google Chrome and go `localhost:3000`
