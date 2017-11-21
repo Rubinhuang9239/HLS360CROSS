@@ -1,6 +1,6 @@
 # HLS360CROSS
 
-<h2>Before you really can run this, you will need two plugins!</h2>
+<h2>Before you really can run this, you will need to install these two plugins!</h2>
 
 #1 https://chrome.google.com/webstore/detail/get-hls-from-youtbe/dhjnjclmedbgdbmipdmdmoejnadcjnja?hl=en-US
 To get a playable HLS URL(m3u8 format), you need this plugin to retrive the url from Youtube.
