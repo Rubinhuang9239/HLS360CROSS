@@ -1,0 +1,16 @@
+{
+  "name": "hlscros36pull",
+  "version": "1.0.0",
+  "description": "node server for allow cross origin data pull(from youtube.com)",
+  "main": "rubin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hls",
+    "youtube",
+    "360video"
+  ],
+  "author": "Rubin Huang",
+  "license": "MIT"
+}

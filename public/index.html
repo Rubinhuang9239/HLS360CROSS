@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- As if this Glitch were a typical HTML CodePen... -->    
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+
+    <!-- HLS_Configuration -->
+    <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+    <script src="js/hlsConfig.js"></script>
+    <!-- ui_control -->
+    <script src="js/ui.js"></script>
+    
+    <!-- Use components defined in separate files. -->
+    <script src="js/arrow-key-rotation.js"></script>
+    <script src="js/play-on-window-click.js"></script>
+    <script src="js/play-on-vrdisplayactivate-or-enter-vr.js"></script>
+    <script src="js/hide-once-playing.js"></script>
+
+    <!-- Specify our scene. -->
+    <a-scene>
+      <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
+      <a-videosphere rotation="0 180 0" src="#video" 
+                     play-on-window-click
+                     play-on-vrdisplayactivate-or-enter-vr>
+      </a-videosphere>
+      
+      <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
+      <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+      </a-camera>      
+      
+      <!-- Wait for the video to load. -->
+      <a-assets>
+        <!-- Single source video. -->
+        <video id="video" style="display:none" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. -->
+          <source type="video/mp4" src="media/360test.mp4">
+        </video>
+      </a-assets>
+    </a-scene>
+
+    <!-- App_Structure -->
+
+    <style>
+
+      #uiLayer{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100px;
+        background-color: rgba(0,0,0,0.5);
+        max-width: 240px;
+        width: 20%;
+        font-family: helvetica;
+        color: #FFF;
+        z-index: 9999;
+      }
+      #uiLayer h5{
+        text-align: center;
+      }
+
+      #urlInput{
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #updateUrlBtn{
+        height: 30px;
+        width: 100%;
+        background-color: #FF9900;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      #updateUrlBtn:hover{
+        opacity: 0.8;
+      }
+
+    </style>
+
+    <script>
+      
+      window.addEventListener("load",function(){
+        ui.init();
+      });
+
+    </script>
+
+    <div id = "uiLayer">
+      <h5>input stream URL</h4>
+      <input id = "urlInput"/>
+      <div id = "updateUrlBtn">
+        Update URL
+      </div>
+    </div>
+  </body>
+</html>
